@@ -1,0 +1,5 @@
+const SafeEnvironment = () => {
+    return <div>Ambiente Seguro</div>
+}
+
+export default SafeEnvironment
