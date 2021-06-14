@@ -8,8 +8,11 @@ import {
   ProfissionaisPaper,
   ProfissionaisContainer,
 } from "@styles/pages/index.style";
+import useIndex from "data/hooks/pages/useIndex.page";
 
 export default function Home() {
+  const { cep, setCep } = useIndex();
+
   return (
     <div>
       <SafeEnvironment />
@@ -27,7 +30,10 @@ export default function Home() {
             label={"Digite seu CEP"}
             variant={"outlined"}
             fullWidth
+            value={cep}
+            onChange={(event) => setCep(event.target.value)}
           />
+          {cep}
           <Typography color={"error"}>CEP inválido</Typography>
           <Button
             variant={"contained"}
